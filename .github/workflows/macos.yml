@@ -1,0 +1,16 @@
+name: Get a MacOS shell for developing a Github Action
+on:
+  workflow_dispatch
+jobs:
+  build:
+    name: Get a MacOS shell for developing a Github Action
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@main
+      with:
+        ref: main
+    - name: Setup upterm session
+      uses: lhotari/action-upterm@v1
+      with:
+        limit-access-to-actor: true
+        limit-access-to-users: bartbroere
